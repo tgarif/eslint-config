@@ -1,0 +1,68 @@
+{
+  "name": "@tgarif/eslint-config",
+  "version": "0.1.0",
+  "description": "Tgarif coding styles for Eslint",
+  "main": "index.js",
+  "files": [
+    "eslintrc/",
+    "index.js",
+    "fix.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "check": "prettier --check './**/*.js'",
+    "fix": "prettier --write './**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgarif/eslint-config"
+  },
+  "keywords": [
+    "tgarif",
+    "eslint",
+    "eslintrc"
+  ],
+  "author": {
+    "name": "Tengku Arif",
+    "email": "arif.tengkumohd@cohu.com"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@tgarif/prettier-config": "^0.1.1",
+    "@types/eslint": "^8.4.1",
+    "husky": "^4.3.7",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^8.10.0",
+    "eslint-plugin-ban": "^1.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^37.9.4",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  },
+  "peerDependencies": {
+    "typescript": ">= 3.0.0 < 5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
