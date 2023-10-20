@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['@tgarif/eslint-config/eslintrc/.eslintrc.js'],
-  plugins: ['simple-import-sort'],
+  extends: ['@tgarif/eslint-config/eslintrc/.eslintrc.js', 'prettier'],
+  plugins: ['prettier', 'simple-import-sort'],
   rules: {
     'import/first': 'error',
     'import/newline-after-import': 'error',
